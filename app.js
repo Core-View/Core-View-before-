@@ -1,3 +1,17 @@
+/*
+$ npm install –g express-generator
+
+// 프로젝트를 만들 경로로 이동해서
+$ express --view=ejs projectName
+
+// 프로젝트 생성 후 이동해서 npm 설치
+$ cd projectName
+$ npm install
+
+// 프로젝트 시작 시
+$ npm start
+*/
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
