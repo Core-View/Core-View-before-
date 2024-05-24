@@ -1,10 +1,11 @@
 import React from 'react';
+import logo from '../assets/CoreView_logo_white.png';
 import './header.css';
 
 function Header() {
   return (
     <header className="header">
-      <h1 className="header-title">Core View</h1>
+      <img src={logo} alt="Logo" className="header-logo"/>
       <nav className="header-nav">
         <ul>
           <li><a href="#posts">전체 게시글</a></li>
