@@ -1,16 +1,21 @@
 import React from 'react';
 import logo from '../assets/CoreView_logo_white.png';
+// npm install react-router-dom
+import { Link } from 'react-router-dom';
 import './header.css';
 
 function Header() {
   return (
     <header className="header">
-      <img src={logo} alt="Logo" className="header-logo"/>
+      <Link to="/">
+        <img src={logo} alt="Logo" className="header-logo" />
+      </Link>
       <nav className="header-nav">
         <ul>
-          <li><a href="#posts">전체 게시글</a></li>
-          <li><a href="#rank">기여도 순위</a></li>
-          <li><a href="#signin">로그인</a></li>
+          <li><Link to="/home_main">home_main</Link></li>
+          <li><Link to="/my_main">my_main</Link></li>
+          <li><Link to="/post_main">post_main</Link></li>
+          <li><Link to="/signin_main">signin_main</Link></li>
         </ul>
       </nav>
     </header>
