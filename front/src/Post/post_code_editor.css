@@ -1,0 +1,26 @@
+/* CodeEditor.css */
+
+.code-editor {
+    display: flex;
+}
+
+.code-input {
+    flex: 1;
+    height: 300px;
+    resize: none;
+    padding: 10px;
+    font-family: monospace;
+    border: 1px solid #ccc;
+}
+
+.code-output {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+.code-output pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
