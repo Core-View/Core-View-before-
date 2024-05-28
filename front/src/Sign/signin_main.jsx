@@ -42,7 +42,7 @@ const Sign_in = () => {
         <form onSubmit={onsubmit} className="form">
           <div className="nickname">
             <div className="nick_label">
-              <label>Nickname</label>
+              <label></label>
             </div>
             <input
               type="text"
