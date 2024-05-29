@@ -21,7 +21,7 @@ const Main = () => {
       <section className="home_mid">
         <div className="post recommend">
           <div>추천게시글</div>
-          <ul className="border">
+          <ul className="code border">
             <li>개쩌는 코드1</li>
             <li>개쩌는 코드2</li>
             <li>개쩌는 코드3</li>
@@ -29,7 +29,7 @@ const Main = () => {
         </div>
         <div className="post newest">
           <div>최신게시글</div>
-          <ul className="border">
+          <ul className="code border">
             <li>개쩌는 코드1</li>
             <li>개쩌는 코드2</li>
             <li>개쩌는 코드3</li>
