@@ -1,36 +1,67 @@
 .home-container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  margin: 80px 100px 0px 100px;
+    width: 1080px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
 }
 
 section {
-  margin-right: 80px;
+    width: 100%;
+    margin-right: 30px;
 }
 
 .post {
-  width: 500px;
-  text-align: left;
-  margin-bottom: 20px;
-  border: 2px solid black;
+    text-align: left;
+    margin-bottom: 40px;
+    border: 2px solid black;
+    position: relative;
 }
 
 .post div {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    background-color: white;
+    width: 100px;
+    text-align: center;
 }
 
-.code {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+.rankcode {
+    margin-top: 15px;
 }
 
-.code li {
-  display: inline-block;
-  width: 180px;
-  height: 150px;
-  background-color: bisque;
-  border: 1px solid black;
-  margin: 8px;
-  margin-top: 18px;
+.rankcode li {
+    display: inline-block;
+    width: 180px;
+    background-color: bisque;
+    border: 1px solid black;
+    margin: 5px 8px;
+}
+
+.postcode {
+    display: flex;
+    flex-direction: row;
+}
+
+.postcode li {
+    display: inline-block;
+    width: 180px;
+    height: 150px;
+    background-color: bisque;
+    border: 1px solid black;
+    margin: 8px;
+    margin-top: 18px;
+}
+
+.home_right {
+    align-items: center;
+    display: flex;
+}
+
+.home_right>div {
+    border: 1px solid black;
+    display: inline-block;
+    display: flex;
+    margin-bottom: 20px;
 }
