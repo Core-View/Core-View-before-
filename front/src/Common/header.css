@@ -8,7 +8,8 @@
 }
 
 .header-logo {
-    max-width: 100px; /* 최대 너비 설정 */
+    max-width: 80px; /* 최대 너비 설정 */
+    margin-left: 10px;
 }
 
 .header-title {
