@@ -4,6 +4,7 @@ import Header from "./Common/Header";
 import Main from "./Home/home_main";
 import Mypage from "./My/my_main";
 import SignIn from "./Sign/signin_main";
+import Write from "./Write/Editor";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="my_main" element={<Mypage />} />
+          <Route path="editor" element={<Editor />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
           </Route>
