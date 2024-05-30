@@ -10,11 +10,14 @@ const Empty = () => {
             <div>New</div>
             <div>Hot</div>
           </div>
-          <span>#많이 뜨는 키워드</span>
+          <ul className="keyword">
+            <li>많이뜨는</li>
+            <li>키워드</li>
+          </ul>
         </div>
         <div className="post-top-right">
-          <span>검색</span>
           <div>
+            <span onClick={() => {}}>검색</span>
             <input type="text" />
           </div>
         </div>

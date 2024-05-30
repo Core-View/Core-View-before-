@@ -1,8 +1,38 @@
 .Poster-container {
     width: 1080px;
     display: flex;
+    flex-direction: column;
     text-align: center;
     margin: 0 auto;
     margin-top: 60px;
     background-color: aquamarine;
+}
+
+.post-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-hot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.keyword {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-mid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-bot ul {
+    display: flex;
+    justify-content: center;
+}
+
+.post-bot ul li {
+    margin: 0px 5px 0px 5px;
 }
