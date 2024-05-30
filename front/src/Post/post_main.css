@@ -1,0 +1,8 @@
+.Poster-container {
+    width: 1080px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: aquamarine;
+}
