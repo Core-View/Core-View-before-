@@ -1,5 +1,6 @@
 import React from "react";
 import "./home_main.css";
+import { SlArrowRight } from "react-icons/sl";
 const Main = () => {
   return (
     <div className="home-container">
@@ -39,9 +40,13 @@ const Main = () => {
         </div>
       </section>
       <section className="home_right">
-        <div>
-          <div>🚀</div>
-          <div>게시판</div>
+        <div
+          onClick={() => {
+            console.log("게시판으로 이동하기");
+          }}
+        >
+          <SlArrowRight style={{ fontSize: "60px" }} />
+          <div>전체보기</div>
         </div>
       </section>
     </div>

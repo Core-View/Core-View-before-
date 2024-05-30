@@ -4,7 +4,7 @@ import Header from "./Common/Header";
 import Main from "./Home/home_main";
 import Mypage from "./My/my_main";
 import SignIn from "./Sign/signin_main";
-
+import Post from "./Post/post_main";
 function App() {
   return (
     <div className="App">
@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="my_main" element={<Mypage />} />
+          <Route path="post_main" element={<Post />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
           </Route>
