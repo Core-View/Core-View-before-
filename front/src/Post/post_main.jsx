@@ -24,11 +24,17 @@ const Empty = () => {
       </section>
       <section className="post-mid">
         <ul className="post-cate">
+          <div>
+            <h4>카테고리</h4>
+          </div>
           <li>딥웹</li>
           <li>해킹</li>
           <li>김정은 암살</li>
         </ul>
         <ul className="post-list">
+          <div>
+            <h4>게시글목록</h4>
+          </div>
           <li>피식대학 이대로 괜찮은지에 대한 코드</li>
           <li>홍 박사님을 아는지 에 대한 코드</li>
           <li>print,console.log,for,if,else,while,enumerate</li>
