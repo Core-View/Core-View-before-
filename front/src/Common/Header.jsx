@@ -16,6 +16,7 @@ function Header() {
           <li><Link to="mypage">my_main</Link></li>
           <li><Link to="/">post_main</Link></li>
           <li><Link to="users/sign-in">signin_main</Link></li>
+          <li><Link to="post-view">post_view</Link></li>
         </ul>
       </nav>
     </header>
