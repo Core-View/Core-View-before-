@@ -33,8 +33,8 @@ int main() {
         if (popup.text.trim() === '') return;
         const newFeedback = feedback[popup.line] ? [...feedback[popup.line], { userId: loggedInUserId, text: popup.text }] : [{ userId: loggedInUserId, text: popup.text }];
         setFeedback({ ...feedback, [popup.line]: newFeedback });
-        setPopup({ show: false, line: null, text: '' });
-    };
+        setPopup({ ...popup, text: '' });
+    };    
 
     return (
         <div className="post-view">

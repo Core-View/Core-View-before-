@@ -134,3 +134,12 @@ body {
 .popup-buttons button:last-child:hover {
     background-color: #0056b3;
 }
+
+.popup-inner textarea {
+    width: calc(100% - 20px); /* 부모 요소의 padding 값에 따라 조정 */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    resize: none; /* textarea 크기 조정 불가능하게 설정 */
+}
