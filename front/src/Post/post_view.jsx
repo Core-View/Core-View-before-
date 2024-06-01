@@ -11,7 +11,6 @@ const PostView = () => {
         Hello, World!
 
         #include <stdio.h>
-
     `.trim().split('\n'); // 줄 단위로 쪼개기
 
     const [feedback, setFeedback] = useState({});
@@ -22,7 +21,9 @@ const PostView = () => {
     };
 
     const handleFeedbackSubmit = (lineIndex, feedbackText) => {
-        setFeedback({ ...feedback, [lineIndex]: feedbackText });
+        if (feedbackText.trim() === '') return;
+        const newFeedback = feedback[lineIndex] ? [...feedback[lineIndex], feedbackText] : [feedbackText];
+        setFeedback({ ...feedback, [lineIndex]: newFeedback });
         setPopup({ show: false, line: null });
     };
 
@@ -38,7 +39,9 @@ const PostView = () => {
                     <div key={index} className="post-line">
                         <span>{line}</span>
                         <button className="feedback-button" onClick={() => handleFeedbackClick(index)}>피드백</button>
-                        {feedback[index] && <div className="feedback-text">{feedback[index]}</div>}
+                        {feedback[index] && feedback[index].map((fb, fbIndex) => (
+                            <div key={fbIndex} className="feedback-text">{fb}</div>
+                        ))}
                     </div>
                 ))}
             </div>
@@ -48,7 +51,7 @@ const PostView = () => {
                         <textarea
                             rows="4"
                             placeholder="피드백을 남겨주세요."
-                            defaultValue={feedback[popup.line] || ''}
+                            defaultValue={feedback[popup.line] ? feedback[popup.line].join('\n') : ''}
                         />
                         <div className="popup-buttons">
                             <button onClick={() => setPopup({ show: false, line: null })}>취소</button>
