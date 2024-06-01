@@ -7,16 +7,16 @@ const PostView = () => {
     const likes = 42;
     const author = "홍길동";
     const content = `
-        안녕하세요.
-        Hello, World!
+안녕하세요.
+Hello, World!
 
-        #include <stdio.h>
+#include <stdio.h>
 
-        int main() {
-            printf("Hello, World!")
+int main() {
+    printf("Hello, World!")
 
-            return 0;
-        }
+    return 0;
+}
     `.trim().split('\n'); // 줄 단위로 쪼개기
 
     // 현재 로그인된 유저의 Id
@@ -43,7 +43,7 @@ const PostView = () => {
                 <span className="post-likes">좋아요 {likes}</span>
                 <span className="post-author">{author}</span>
             </div>
-            <div className="post-content">
+            <pre className="post-content">
                 {content.map((line, index) => (
                     <div key={index} className="post-line">
                         <span>{line}</span>
@@ -57,7 +57,7 @@ const PostView = () => {
                         )}
                     </div>
                 ))}
-            </div>
+            </pre>
             {popup.show && (
                 <div className="popup">
                     <div className="feedback-list">
