@@ -17,25 +17,19 @@ body {
 }
 
 .post-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .post-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
-    color: #666;
     margin-bottom: 20px;
 }
 
-.post-likes {
-    color: #007bff;
-}
-
-.post-author {
-    color: #007bff;
+.post-likes, .post-author {
+    font-size: 1rem;
+    color: #888;
 }
 
 .post-content {
@@ -48,7 +42,7 @@ body {
 
 .post-line {
     position: relative;
-    padding-right: 50px; /* 버튼 공간 확보 */
+    padding-right: 100px; /* 버튼 공간 확보 */
     margin-bottom: 10px;
 }
 
@@ -63,6 +57,7 @@ body {
     display: none;
 }
 
+.feedback-button.active,
 .post-line:hover .feedback-button {
     display: inline-block;
 }
@@ -97,6 +92,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
+    resize: none; /* textarea 크기 조정 불가능하게 설정 */
 }
 
 .popup-buttons {

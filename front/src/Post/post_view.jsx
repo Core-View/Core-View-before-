@@ -11,20 +11,26 @@ const PostView = () => {
         Hello, World!
 
         #include <stdio.h>
+
+        int main() {
+            printf("Hello, World!")
+
+            return 0;
+        }
     `.trim().split('\n'); // 줄 단위로 쪼개기
 
     const [feedback, setFeedback] = useState({});
-    const [popup, setPopup] = useState({ show: false, line: null });
+    const [popup, setPopup] = useState({ show: false, line: null, text: '' });
 
     const handleFeedbackClick = (lineIndex) => {
-        setPopup({ show: true, line: lineIndex });
+        setPopup({ show: true, line: lineIndex, text: '' });
     };
 
-    const handleFeedbackSubmit = (lineIndex, feedbackText) => {
-        if (feedbackText.trim() === '') return;
-        const newFeedback = feedback[lineIndex] ? [...feedback[lineIndex], feedbackText] : [feedbackText];
-        setFeedback({ ...feedback, [lineIndex]: newFeedback });
-        setPopup({ show: false, line: null });
+    const handleFeedbackSubmit = () => {
+        if (popup.text.trim() === '') return;
+        const newFeedback = feedback[popup.line] ? [...feedback[popup.line], popup.text] : [popup.text];
+        setFeedback({ ...feedback, [popup.line]: newFeedback });
+        setPopup({ show: false, line: null, text: '' });
     };
 
     return (
@@ -38,28 +44,31 @@ const PostView = () => {
                 {content.map((line, index) => (
                     <div key={index} className="post-line">
                         <span>{line}</span>
-                        <button className="feedback-button" onClick={() => handleFeedbackClick(index)}>피드백</button>
-                        {feedback[index] && feedback[index].map((fb, fbIndex) => (
-                            <div key={fbIndex} className="feedback-text">{fb}</div>
-                        ))}
+                        <button className={`feedback-button ${feedback[index] ? 'active' : ''}`} onClick={() => handleFeedbackClick(index)}>
+                            피드백 {feedback[index] ? `(${feedback[index].length})` : ''}
+                        </button>
                     </div>
                 ))}
             </div>
             {popup.show && (
                 <div className="popup">
+                    <div className="feedback-list">
+                        {feedback[popup.line] && feedback[popup.line].map((fb, fbIndex) => (
+                            <div key={fbIndex} className="feedback-text">{fb}</div>
+                        ))}
+                    </div>
+                    <p></p>
                     <div className="popup-inner">
                         <textarea
                             rows="4"
                             placeholder="피드백을 남겨주세요."
-                            defaultValue={feedback[popup.line] ? feedback[popup.line].join('\n') : ''}
+                            value={popup.text}
+                            onChange={(e) => setPopup({ ...popup, text: e.target.value })}
+                            style={{ resize: 'none' }} // textarea 크기 조정 불가능하게 설정
                         />
                         <div className="popup-buttons">
-                            <button onClick={() => setPopup({ show: false, line: null })}>취소</button>
-                            <button
-                                onClick={() => handleFeedbackSubmit(popup.line, document.querySelector('.popup textarea').value)}
-                            >
-                                제출
-                            </button>
+                            <button onClick={() => setPopup({ show: false, line: null, text: '' })}>취소</button>
+                            <button onClick={handleFeedbackSubmit}>제출</button>
                         </div>
                     </div>
                 </div>
