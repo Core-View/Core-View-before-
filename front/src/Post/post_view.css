@@ -44,6 +44,11 @@ body {
     position: relative;
     padding-right: 100px; /* 버튼 공간 확보 */
     margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.post-line:hover {
+    background-color: #e9f5ff; /* 마우스를 올렸을 때 줄의 배경색 */
 }
 
 .feedback-button {
