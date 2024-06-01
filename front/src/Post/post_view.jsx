@@ -19,6 +19,9 @@ const PostView = () => {
         }
     `.trim().split('\n'); // 줄 단위로 쪼개기
 
+    // 현재 로그인된 유저의 Id
+    const loggedInUserId = "user123";
+
     const [feedback, setFeedback] = useState({});
     const [popup, setPopup] = useState({ show: false, line: null, text: '' });
 
@@ -28,7 +31,7 @@ const PostView = () => {
 
     const handleFeedbackSubmit = () => {
         if (popup.text.trim() === '') return;
-        const newFeedback = feedback[popup.line] ? [...feedback[popup.line], popup.text] : [popup.text];
+        const newFeedback = feedback[popup.line] ? [...feedback[popup.line], { userId: loggedInUserId, text: popup.text }] : [{ userId: loggedInUserId, text: popup.text }];
         setFeedback({ ...feedback, [popup.line]: newFeedback });
         setPopup({ show: false, line: null, text: '' });
     };
@@ -49,7 +52,7 @@ const PostView = () => {
                         </button>
                         {feedback[index] && feedback[index].length > 0 && (
                             <div className="feedback-text">
-                                [최근 피드백] {feedback[index][feedback[index].length - 1]}
+                                [최근 피드백] {feedback[index][feedback[index].length - 1].userId}: {feedback[index][feedback[index].length - 1].text}
                             </div>
                         )}
                     </div>
@@ -59,7 +62,7 @@ const PostView = () => {
                 <div className="popup">
                     <div className="feedback-list">
                         {feedback[popup.line] && feedback[popup.line].map((fb, fbIndex) => (
-                            <div key={fbIndex} className="feedback-text">{fb}</div>
+                            <div key={fbIndex} className="feedback-text">{fb.userId}: {fb.text}</div>
                         ))}
                     </div>
                     <p></p>
