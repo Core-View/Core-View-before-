@@ -47,6 +47,11 @@ const PostView = () => {
                         <button className={`feedback-button ${feedback[index] ? 'active' : ''}`} onClick={() => handleFeedbackClick(index)}>
                             피드백 {feedback[index] ? `(${feedback[index].length})` : ''}
                         </button>
+                        {feedback[index] && feedback[index].length > 0 && (
+                            <div className="feedback-text">
+                                [최근 피드백] {feedback[index][feedback[index].length - 1]}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -64,7 +69,7 @@ const PostView = () => {
                             placeholder="피드백을 남겨주세요."
                             value={popup.text}
                             onChange={(e) => setPopup({ ...popup, text: e.target.value })}
-                            style={{ resize: 'none' }} // textarea 크기 조정 불가능하게 설정
+                            style={{ resize: 'none' }}
                         />
                         <div className="popup-buttons">
                             <button onClick={() => setPopup({ show: false, line: null, text: '' })}>취소</button>
