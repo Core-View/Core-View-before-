@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Common/Header";
 import Main from "./Home/home_main";
 import Mypage from "./My/my_main";
+import Mymodify from "./My/my_modify";
 import SignIn from "./Sign/signin_main";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="my_main" element={<Mypage />} />
+          <Route path="my_modify" element={<Mymodify />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
           </Route>

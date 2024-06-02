@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './my_main.css';
+import Modal from './my_alram';
 
 const Mypage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [notifications, setNotifications] = useState([
+    { id: 1, text: "새로운 메시지가 도착했습니다", read: false },
+    { id: 2, text: "새로운 친구 요청이 있습니다", read: false },
+    { id: 3, text: "이벤트 참여 확인", read: false }
+  ]);
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+    setNotifications(notifications.map(notification => ({ ...notification, read: true })));
+  };
+
   return (
     <div>
-      <div className='alram'>
+      <div className='alram' onClick={toggleModal}>
         <img src="ring.png" alt="alram" className='alram'/>
       </div>
+      <Modal isOpen={modalOpen} onClose={toggleModal}>
+        <ul>
+          {notifications.filter(notification => !notification.read).length > 0 ? (
+            notifications.filter(notification => !notification.read).map(notification => (
+              <li key={notification.id}>{notification.text}</li>
+            ))
+          ) : (
+            <li>알림이 없습니다.</li>
+          )}
+        </ul>
+      </Modal>
       <div className='space1'>
         <div className='my_info'>
           <div className='image_profile'>
@@ -19,6 +42,9 @@ const Mypage = () => {
             </div>
             <div className='intro_zone'>
               <h5>소개</h5>
+            </div>
+            <div className='modify_zone'>
+              <Link to='/my_modify' style={{textDecoration: "none", color:'black'}}>정보수정</Link>
             </div>
           </div>
         </div>

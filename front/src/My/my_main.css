@@ -10,6 +10,10 @@
     flex: 1;
 }
 
+.modify_zone{
+    text-align: right;
+}
+
 .alram{
     width: 20%;
     height: 20%;
@@ -78,13 +82,13 @@
 
 .menu_item::after{
     content: "";
-          width: 1px;
-          height: 100%;
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          background-color: gray;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: gray;
 }
 
 .menu_item:last-child::after{
