@@ -16,7 +16,7 @@ function Header() {
             <Link to="/">home_main</Link>
           </li>
           <li>
-            <Link to="mypage">my_main</Link>
+            <Link to="my_main">my_main</Link>
           </li>
           <li>
             <Link to="/post_main">post_main</Link>
