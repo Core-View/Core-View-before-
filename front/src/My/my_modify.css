@@ -1,0 +1,28 @@
+.form-container {
+    display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.modi_field{
+    width: 50%; /* fieldset의 너비를 50%로 설정 */
+    border: 2px solid #ccc; /* 테두리 스타일을 추가 */
+    padding: 20px; /* 내부 여백을 추가 */
+    /*width: 500px;
+    padding:20px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    border: 3px solid palevioletred;*/
+}
+
+.modi_table{
+    height: 300%;
+    text-align: center;
+}
+
+.prefile{
+    border-radius: 50%;  /* 원형 모양을 만듭니다 */
+    width: 100px;        /* 이미지 크기를 지정합니다 */
+    height: 100px;       /* 이미지 높이를 지정합니다 */
+    object-fit: cover;
+}

@@ -5,6 +5,7 @@ import Main from './Home/home_main';
 import Mypage from './My/my_main';
 import SignIn from './Sign/Sign_in/signin_main';
 import SignUp from './Sign/Sign_up/signup_main';
+import Mymodify from "./My/my_modify";
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="post-view" element={<PostView />} />
-          <Route path="mypage" element={<Mypage />} />
+          <Route path="my_main" element={<Mypage />} />
+          <Route path="my_modify" element={<Mymodify />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
             <Route path="sign-up" element={<SignUp />} />

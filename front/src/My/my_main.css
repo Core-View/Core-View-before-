@@ -1,0 +1,95 @@
+.my_profile{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 70%;
+    object-fit: cover;
+}
+
+.info_zone{
+    flex: 1;
+}
+
+.modify_zone{
+    text-align: right;
+}
+
+.alram{
+    width: 20%;
+    height: 20%;
+    padding: 10px;
+    float: right;
+}
+
+.notification-dot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.space1{
+    width: 95%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.space2{
+    width: 95%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.activity{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contribution{
+    flex: 1;
+}
+
+.good{
+    flex: 1;
+}
+
+.image_profile{
+    flex: 1;
+}
+
+.my_info{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.name_zone{
+    height: 20%;
+}
+
+.intro_zone{
+    height: 40%;
+}
+
+.post_zone{
+    flex:1;
+}
+.comment_zone{
+    flex:1;
+}
+.my_posts{
+    text-align: center;
+}
+
+.my_comments{
+    text-align: center;
+}
