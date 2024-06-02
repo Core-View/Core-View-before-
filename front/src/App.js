@@ -13,7 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="my_main" element={<Mypage />} />
+          <Route path="post-view" element={<PostView />} />
+          <Route path="mypage" element={<Mypage />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
             <Route path="sign-up" element={<SignUp />} />
