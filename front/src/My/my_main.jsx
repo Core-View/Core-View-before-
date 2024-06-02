@@ -10,7 +10,9 @@ const Mypage = () => {
     { id: 2, text: "새로운 친구 요청이 있습니다", read: false },
     { id: 3, text: "이벤트 참여 확인", read: false }
   ]);
-
+  //읽지 않은 알림있는지 확인
+  const hasUnreadNotifications = notifications.some(notification => !notification.read);
+  
   // JSON 데이터로부터 사용자 정보를 받아오기 위한 상태 추가
   const [userInfo, setUserInfo] = useState({ name: '', intro: '' , profileImg: '' });
   const [posts, setPosts] = useState([]);
@@ -22,7 +24,7 @@ const Mypage = () => {
       const data = await Promise.resolve({
         name: "홍길동",
         intro: "안녕하세요, React를 좋아하는 개발자입니다.",
-        profileImg : "ring.png" //이미지
+        profileImg : "original_profile.png" //이미지
       });
       setUserInfo(data);
     };
@@ -57,6 +59,7 @@ const Mypage = () => {
     <div>
       <div className='alram' onClick={toggleModal}>
         <img src="ring.png" alt="alram" className='alram'/>
+        {hasUnreadNotifications && <span className="notification-dot"></span>}
       </div>
       <Modal isOpen={modalOpen} onClose={toggleModal}>
         <ul>
@@ -102,11 +105,10 @@ const Mypage = () => {
           </div>
           <hr></hr>
           <div>
-            <h1>게시글 모임</h1>
             {posts.length > 0 ? (
             <ul>
               {posts.map(post => (
-                <li key={post.id}>
+                <li key={post.id} style={{ listStyleType: 'none' }}>
                   <Link to={`/post/${post.id}`} style={{textDecoration: "none", color:'black'}}>
                     {post.title}
                   </Link>
@@ -124,11 +126,10 @@ const Mypage = () => {
           </div>
           <hr></hr>
           <div>
-          <h1>내가 댓글 단 게시글</h1>
             {comments.length > 0 ? (
             <ul>
               {comments.map(comment => (
-                <li key={comment.id}>
+                <li key={comment.id} style={{ listStyleType: 'none' }}>
                   <Link to={`/post/${comment.id}`} style={{textDecoration: "none", color:'black'}}>
                     {comment.title}
                   </Link>

@@ -21,6 +21,17 @@
     float: right;
 }
 
+.notification-dot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
 .space1{
     width: 95%;
     margin: 20px;
