@@ -32,6 +32,8 @@
 .space2{
     width: 95%;
     margin: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .activity{
@@ -67,30 +69,16 @@
     height: 40%;
 }
 
-.menu_bar{
-    list-style: none;
-    display: flex;
+.post_zone{
+    flex:1;
 }
-
-.menu_item{
-    width: calc(100% / 2);
-    height: 50px;
-    line-height: 50px;
+.comment_zone{
+    flex:1;
+}
+.my_posts{
     text-align: center;
-    position: relative;
 }
 
-.menu_item::after{
-    content: "";
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: gray;
-}
-
-.menu_item:last-child::after{
-    display: none;
+.my_comments{
+    text-align: center;
 }
