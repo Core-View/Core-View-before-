@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import './sign-in.css';
+import './Sign_in.css';
 
 const Sign_in = () => {
   const navigate = useNavigate();
@@ -15,6 +15,10 @@ const Sign_in = () => {
     setPassword(e.target.value);
   }, []);
   const onsubmit = () => {
+    if (nickname.length === 0 || password.length === 0) {
+      alert('아이디와 비밀번호를 모두 입력 해주세요');
+      return;
+    }
     axios
       .post('url', {
         nickname: nickname,
@@ -33,16 +37,16 @@ const Sign_in = () => {
       });
   };
   return (
-    <div className="container">
-      <div className="loginForm">
-        <div className="logo">
+    <div className="container_si">
+      <div className="loginForm_si">
+        <div className="logo_si">
           <img src="/CoreView_logo_white.png" alt="logo" />
         </div>
 
-        <form onSubmit={onsubmit} className="form">
-          <div className="nickname">
-            <div className="nick_label">
-              <label></label>
+        <form onSubmit={onsubmit} className="form_si">
+          <div className="nickname_si">
+            <div className="nick_label_si">
+              <label>Nickname</label>
             </div>
             <input
               type="text"
@@ -50,11 +54,11 @@ const Sign_in = () => {
               placeholder="nickName"
               value={nickname}
               onChange={onchangeNickname}
-              className="nick_input"
+              className="nick_input_si"
             />
           </div>
-          <div className="password">
-            <div className="pass_label">
+          <div className="password_si">
+            <div className="pass_label_si">
               <label>Password</label>
             </div>
             <input
@@ -63,10 +67,10 @@ const Sign_in = () => {
               placeholder="Password"
               value={password}
               onChange={onchangePassword}
-              className="pass_input"
+              className="pass_input_si"
             />
           </div>
-          <div className="submit">
+          <div className="submit_si">
             <button type="submit">로그인</button>
           </div>
         </form>

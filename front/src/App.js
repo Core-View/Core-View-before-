@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Common/Header';
 import Main from './Home/home_main';
 import Mypage from './My/my_main';
-import SignIn from './Sign/signin_main';
-import SignUp from './Sign/signup_main';
+import SignIn from './Sign/Sign_in/signin_main';
+import SignUp from './Sign/Sign_up/signup_main';
 
 function App() {
   return (
