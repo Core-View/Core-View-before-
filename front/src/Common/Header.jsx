@@ -16,13 +16,16 @@ function Header() {
             <Link to="/">home_main</Link>
           </li>
           <li>
-            <Link to="/my_main">my_main</Link>
+            <Link to="mypage">my_main</Link>
           </li>
           <li>
             <Link to="/post_main">post_main</Link>
           </li>
           <li>
-            <Link to="/signin_main">signin_main</Link>
+            <Link to="users/sign-in">signin_main</Link>
+          </li>
+          <li>
+            <Link to="post-view">post_view</Link>
           </li>
         </ul>
       </nav>
