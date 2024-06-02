@@ -95,8 +95,6 @@ input {
     width: 800px;
 }
 
-.post-list li {}
-
 .post-bot ul {
     display: flex;
     justify-content: center;
