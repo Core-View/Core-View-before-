@@ -1,0 +1,109 @@
+.Poster-container {
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: aquamarine;
+    border: 1px solid black;
+}
+
+.post-top {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+}
+
+.post-top-left {
+    margin-left: 20px;
+}
+
+.post-top-right {
+    display: flex;
+    height: 40px;
+    padding-top: 10px;
+
+}
+
+.post-top-right span,
+input {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.post_search {
+    font-size: 30px;
+}
+
+.pencil {
+    margin: 0 auto;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: antiquewhite;
+
+}
+
+.new-hot {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+}
+
+.keyword {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+}
+
+.post-mid {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 500px;
+
+}
+
+.post-mid h4 {
+    margin: 0px 0px 10px 0px;
+    border-bottom: 4px solid black;
+}
+
+.post-mid ul {
+    margin: 0 auto;
+}
+
+.post-mid li {
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    width: 80%;
+}
+
+.post-cate {
+    border: 1px solid black;
+    width: 200px;
+}
+
+.post-list {
+    border: 1px solid black;
+    width: 800px;
+}
+
+.post-bot ul {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+
+}
+
+.post-bot ul li {
+    margin: 0px 5px 0px 5px;
+    border: 1px solid black;
+
+}
