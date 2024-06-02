@@ -5,11 +5,13 @@ import Main from "./Home/home_main";
 import Mypage from "./My/my_main";
 import SignIn from "./Sign/signin_main";
 import Post from "./Post/post_main";
+import Sidebar from "./Common/Sidebar";
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
+        <Sidebar width={320} />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="my_main" element={<Mypage />} />

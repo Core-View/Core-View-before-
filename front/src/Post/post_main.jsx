@@ -17,6 +17,7 @@ const Empty = () => {
         </div>
         <div className="post-top-right">
           <div>
+            <span onClick={() => {}}>글쓰기</span>
             <span onClick={() => {}}>검색</span>
             <input type="text" />
           </div>

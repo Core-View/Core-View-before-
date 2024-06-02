@@ -4,23 +4,6 @@ import { SlArrowRight } from "react-icons/sl";
 const Main = () => {
   return (
     <div className="home-container">
-      <section className="home_left">
-        <div className="post rank">
-          <div>기여도 순위</div>
-          <ul className="rankcode">
-            <li>1. 이브라히모비치</li>
-            <li>2. 이브라히모비치</li>
-            <li>3. 이브라히모비치</li>
-            <li>4. 이브라히모비치</li>
-            <li>5. 이브라히모비치</li>
-            <li>6. 이브라히모비치</li>
-            <li>7. 이브라히모비치</li>
-            <li>8. 이브라히모비치</li>
-            <li>9. 이브라히모비치</li>
-            <li>10. 이브라히모비치</li>
-          </ul>
-        </div>
-      </section>
       <section className="home_mid">
         <div className="post recommend">
           <div>추천게시글</div>
