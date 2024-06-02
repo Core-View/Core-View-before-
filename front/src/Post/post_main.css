@@ -21,7 +21,29 @@
 }
 
 .post-top-right {
+    display: flex;
+    height: 40px;
+    padding-top: 10px;
+
+}
+
+.post-top-right span,
+input {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.post_search {
+    font-size: 30px;
+}
+
+.pencil {
+    margin: 0 auto;
+    width: 60px;
     border: 1px solid black;
+    border-radius: 8px;
+    background-color: antiquewhite;
 
 }
 

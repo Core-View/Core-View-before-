@@ -1,7 +1,12 @@
 import React from "react";
 import "./post_main.css";
+import { useNavigate } from "react-router-dom";
+import { PiPencilLineFill } from "react-icons/pi";
+import { TbListSearch } from "react-icons/tb";
 
 const Empty = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="Poster-container">
       <section className="post-top">
@@ -16,11 +21,16 @@ const Empty = () => {
           </ul>
         </div>
         <div className="post-top-right">
-          <div>
-            <span onClick={() => {}}>글쓰기</span>
-            <span onClick={() => {}}>검색</span>
-            <input type="text" />
+          <div className="pencil">
+            <PiPencilLineFill
+              className="post_search "
+              onClick={() => {
+                navigate("/post_code");
+              }}
+            />
           </div>
+          <TbListSearch className="post_search" onClick={() => {}} />
+          <input type="text" />
         </div>
       </section>
       <section className="post-mid">

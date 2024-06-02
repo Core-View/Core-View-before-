@@ -5,17 +5,19 @@ import Main from "./Home/home_main";
 import Mypage from "./My/my_main";
 import SignIn from "./Sign/signin_main";
 import Post from "./Post/post_main";
+import CodeEditor from "./Post/post_code_editor";
 import Sidebar from "./Common/Sidebar";
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
-        <Sidebar width={320} />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="my_main" element={<Mypage />} />
           <Route path="post_main" element={<Post />} />
+          <Route path="post_code" element={<CodeEditor />} />
           <Route path="users">
             <Route path="sign-in" element={<SignIn />} />
           </Route>

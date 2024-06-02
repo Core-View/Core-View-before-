@@ -1,7 +1,9 @@
 import React from "react";
 import "./home_main.css";
 import { SlArrowRight } from "react-icons/sl";
+import { useBeforeUnload, useNavigate } from "react-router-dom";
 const Main = () => {
+  const navigate = useNavigate();
   return (
     <div className="home-container">
       <section className="home_mid">
@@ -25,7 +27,7 @@ const Main = () => {
       <section className="home_right">
         <div
           onClick={() => {
-            console.log("게시판으로 이동하기");
+            navigate("post_main");
           }}
         >
           <SlArrowRight style={{ fontSize: "60px" }} />
