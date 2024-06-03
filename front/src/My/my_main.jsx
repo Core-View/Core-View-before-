@@ -17,10 +17,10 @@ const Mypage = () => {
   const [userInfo, setUserInfo] = useState({ name: '', intro: '' , profileImg: '' });
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]); // 댓글 단 게시글 제목 저장
-  // 가상의 API로부터 데이터를 로드한다고 가정
+  //가상의 API로부터 데이터를 로드한다고 가정
   useEffect(() => {
     const fetchUserData = async () => {
-      // API 호출 대신 정적 JSON 데이터 사용
+      //API 호출 대신 정적 JSON 데이터 사용
       const data = await Promise.resolve({
         name: "홍길동",
         intro: "안녕하세요, React를 좋아하는 개발자입니다.",
