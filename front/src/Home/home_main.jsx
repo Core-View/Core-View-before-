@@ -1,7 +1,7 @@
 import React from "react";
 import "./home_main.css";
 import { SlArrowRight } from "react-icons/sl";
-import { useBeforeUnload, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Main = () => {
   const navigate = useNavigate();
   return (
