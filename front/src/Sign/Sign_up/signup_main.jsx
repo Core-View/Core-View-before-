@@ -172,7 +172,7 @@ const Sign_in = () => {
     <div className="container">
       <div className="loginForm">
         <div className="logo">
-          <img src="/CoreView_logo_white.png" alt="logo" />
+          <img src="/images/CoreView_logo_white.png" alt="logo" />
         </div>
 
         <form onSubmit={onsubmit} className="form">
