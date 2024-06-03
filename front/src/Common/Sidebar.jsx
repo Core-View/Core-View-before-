@@ -46,7 +46,7 @@ const Sidebar = () => {
         <ul className="rankcode">
           {ranker.map((a, i) => (
             <li key={i}>
-              {i + 1}등 {a}
+              <div>{i + 1}</div> {a}
             </li>
           ))}
         </ul>
