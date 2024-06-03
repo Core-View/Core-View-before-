@@ -24,7 +24,7 @@ const Mypage = () => {
       const data = await Promise.resolve({
         name: "홍길동",
         intro: "안녕하세요, React를 좋아하는 개발자입니다.",
-        profileImg : "original_profile.png" //이미지
+        profileImg : "/images/original_profile.png" //이미지
       });
       setUserInfo(data);
     };
@@ -58,7 +58,7 @@ const Mypage = () => {
   return (
     <div>
       <div className='alram' onClick={toggleModal}>
-        <img src="ring.png" alt="alram" className='alram'/>
+        <img src="/images/ring.png" alt="alram" className='alram'/>
         {hasUnreadNotifications && <span className="notification-dot"></span>}
       </div>
       <Modal isOpen={modalOpen} onClose={toggleModal}>
@@ -75,7 +75,7 @@ const Mypage = () => {
       <div className='space1'>
         <div className='my_info'>
           <div className='image_profile'>
-            <img src={userInfo.profileImg || "original_profile.png"} alt="profile" className='my_profile'/>
+            <img src={userInfo.profileImg || "/images/original_profile.png"} alt="profile" className='my_profile'/>
           </div>
           <div className='info_zone'>
             <div className='name_zone'>

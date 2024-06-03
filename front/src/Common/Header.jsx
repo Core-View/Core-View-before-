@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/CoreView_logo_white.png";
 // npm install react-router-dom
 import { Link } from "react-router-dom";
 import "./header.css";
@@ -8,7 +7,7 @@ function Header() {
   return (
     <header className="header">
       <Link to="/">
-        <img src={logo} alt="Logo" className="header-logo" />
+        <img src="/images/CoreView_logo_white.png" alt="Logo" className="header-logo" />
       </Link>
       <nav className="header-nav">
         <ul>
