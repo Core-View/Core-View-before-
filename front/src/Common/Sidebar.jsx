@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 
 const Sidebar = () => {
+  let ranker = [
+    "박지훈",
+    "김민주",
+    "서원준",
+    "형준",
+    "김해진",
+    "이승진",
+    "김장윤",
+    "정중환",
+    "신짱구",
+    "김치장인",
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -29,18 +42,13 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="rank">
-        <div>기여도 순위</div>
+        <div>🎊기여도 랭킹🎊</div>
         <ul className="rankcode">
-          <li>1. 이브라히모비치</li>
-          <li>2. 이브라히모비치</li>
-          <li>3. 이브라히모비치</li>
-          <li>4. 이브라히모비치</li>
-          <li>5. 이브라히모비치</li>
-          <li>6. 이브라히모비치</li>
-          <li>7. 이브라히모비치</li>
-          <li>8. 이브라히모비치</li>
-          <li>9. 이브라히모비치</li>
-          <li>10. 이브라히모비치</li>
+          {ranker.map((a, i) => (
+            <li key={i}>
+              {i + 1}등 {a}
+            </li>
+          ))}
         </ul>
       </div>
       <span className="clicker" onClick={toggleSidebar}>
