@@ -13,7 +13,7 @@ const Mypage = () => {
   //읽지 않은 알림있는지 확인
   const hasUnreadNotifications = notifications.some(notification => !notification.read);
   
-  // JSON 데이터로부터 사용자 정보를 받아오기 위한 상태 추가
+  //JSON 데이터로부터 사용자 정보를 받아오기 위한 상태 추가
   const [userInfo, setUserInfo] = useState({ name: '', intro: '' , profileImg: '' });
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]); // 댓글 단 게시글 제목 저장
