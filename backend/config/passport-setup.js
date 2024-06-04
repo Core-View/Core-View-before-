@@ -1,27 +1,43 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const dotenv = require('dotenv');
+const pool = require('./databaseSet');
 
-// 환경 변수를 로드
-dotenv.config(); // 환경 변수 로드
-
-console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID); // 디버그용 로그
-console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET); // 디버그용 로그
+dotenv.config();
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: "/auth/google/callback"
 },
-function(token, tokenSecret, profile, done) {
-  // 사용자 인증 로직을 여기에 추가합니다.
-  return done(null, profile);
+async function(token, tokenSecret, profile, done) {
+  try {
+    const [rows] = await pool.query('SELECT * FROM users WHERE google_id = ?', [profile.id]);
+    if (rows.length > 0) {
+      return done(null, rows[0]);
+    } else {
+      const [result] = await pool.query('INSERT INTO users (google_id, username, email) VALUES (?, ?, ?)', [profile.id, profile.displayName, profile.emails[0].value]);
+      const [newUser] = await pool.query('SELECT * FROM users WHERE id = ?', [result.insertId]);
+      return done(null, newUser[0]);
+    }
+  } catch (err) {
+    return done(err);
+  }
 }));
 
 passport.serializeUser((user, done) => {
-  done(null, user);
+  done(null, user.id);
 });
 
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
+passport.deserializeUser(async (id, done) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
+    if (rows.length > 0) {
+      done(null, rows[0]);
+    } else {
+      done(null, null);
+    }
+  } catch (err) {
+    done(err, null);
+  }
 });
