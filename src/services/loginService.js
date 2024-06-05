@@ -1,13 +1,26 @@
-function authenticate(username, password) {
-    // 여기에 실제 인증 로직을 구현합니다.
-    // 예를 들어, 데이터베이스에서 사용자 정보를 조회하고, 입력된 정보와 일치하는지 확인합니다.
-    // 이 예제에서는 단순히 사용자가 "admin"이라는 사용자 이름과 "password123"이라는 비밀번호를 사용하는 것으로 가정합니다.
-    if (username === "admin" && password === "password123") {
-      return true; // 인증 성공
-    } else {
-      return false; // 인증 실패
+const pool = require('../../config/databaseSet'); // config 폴더가 src와 같은 상위 폴더에 있음
+const bcrypt = require('bcryptjs');
+
+async function authenticate(username, password) {
+  try {
+    const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
+
+    if (rows.length === 0) {
+      console.log('사용자를 찾을 수 없음');
+      return false; // 사용자를 찾을 수 없음
     }
+
+    const user = rows[0];
+    console.log('데이터베이스에서 찾은 사용자:', user);
+
+    // 비밀번호 비교 (plain text 비교)
+    const isMatch = password === user.password;
+    console.log('비밀번호 비교 결과:', isMatch);
+    return isMatch;
+  } catch (err) {
+    console.error('인증 중 오류 발생:', err);
+    throw err;
   }
-  
-  module.exports = { authenticate };
-  
+}
+
+module.exports = { authenticate };
